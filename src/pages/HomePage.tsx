@@ -3,36 +3,38 @@ import HomePageImage from "../assets/images/home-page.jpg";
 
 const HomePage = () => {
     return (
-        <div>
-            <div className="container p-4">
-                <h1 className="fw-bold text-center py-3">Find the Perfect Van Rental for Your Next Adventure!</h1>
-                <p className="fs-5 m-0 text-center">
-                    Looking for the perfect van for your next adventure?
-                    <br />
-                    Look no further - our website offers a wide selection of vans for rent to suit all your needs.
-                    <br />
-                    <Link to='/vans' className="text-danger px-1">
-                        Book now
-                    </Link>
-                    and hit the road in style!
-                </p>
-            </div>
-            <div 
-                style={{
-                    backgroundImage: `url(${HomePageImage})`,
-                    backgroundSize: 'cover',
-                    backgroundRepeat: 'no-repeat',
-                    backgroundPosition: 'center',
-                    height:'60vh'
-                }}
-            />
-            <div className="d-flex justify-content-center pt-4">
-                <Link to='/vans'>
-                    <button className="btn btn-outline-danger rounded-0 px-4 fw-bold fs-5">
-                        Find your Van
-                    </button>
-                </Link>
-            </div>
+        <div
+            style={{
+                backgroundImage: `url(${HomePageImage})`,
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
+                padding: '3rem 3rem calc(100vh - 33.15rem)'
+            }}
+        >
+            <h1
+                className="fw-bold py-3 text-light"
+                style={{ fontSize: 'clamp(2rem, 100vw/10, 5rem)' }}
+            >
+                Find <label className="text-danger">the Perfect Van Rental</label>
+                <br />
+                for Your Next Adventure!
+            </h1>
+            <p className="fs-5 m-0 text-light">
+                Looking for the perfect van for your next adventure?
+                <br />
+                We offer a wide selection of vans for rent to suit all your needs.
+                <br />
+                <strong className="me-1">
+                    Book now
+                </strong>
+                and hit the road in style!
+            </p>
+            <Link to='/vans'>
+                <button className="btn btn-outline-light rounded-0 px-4 fw-bold fs-1 border-5 mt-3">
+                    Find your Van
+                </button>
+            </Link>
         </div>
     );
 }
