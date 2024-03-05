@@ -13,7 +13,7 @@ const AboutPage = ({ ...props }: Props) => {
             <p className="container fs-5 p-4">
                 Our website is dedicated to providing an easy and convenient way for customers to rent vans for any purpose. With a wide selection of vehicles available for short or long-term rental, we aim to meet the diverse needs of individuals and businesses alike. Our user-friendly interface and transparent pricing make the rental process seamless, ensuring a hassle-free experience for our customers.
                 <br />
-                <br />
+                <br /> 
                 Thank you for considering us for your van rental needs.
             </p>
             <div className="d-flex justify-content-center pb-4 mb-3">
