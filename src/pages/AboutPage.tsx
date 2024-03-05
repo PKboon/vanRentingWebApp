@@ -1,12 +1,7 @@
-import React from "react";
 import AboutPageImage from '../assets/images/about-page.jpg';
 import { Link } from "react-router-dom";
 
-interface Props extends React.ComponentProps<'div'> {
-
-}
-
-const AboutPage = ({ ...props }: Props) => {
+const AboutPage = () => {
     return (
         <div className="pt-4">
             <h2 className="fw-bold text-center pb-3">About Us</h2>

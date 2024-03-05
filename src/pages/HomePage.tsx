@@ -1,12 +1,7 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import HomePageImage from "../assets/images/home-page.jpg";
 
-interface Props extends React.ComponentProps<'div'> {
-
-}
-
-const HomePage = ({ ...props }: Props) => {
+const HomePage = () => {
     return (
         <div>
             <div className="container p-4">
