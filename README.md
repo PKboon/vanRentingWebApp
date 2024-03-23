@@ -1,6 +1,6 @@
 # Van Renting Web App
 
-This project is a part of learning React Router.
+This project is a part of learning [React Router 6](https://www.youtube.com/watch?v=nDGA3km5He4).
 
 ## Steps
 ### 1. Create React with Vite

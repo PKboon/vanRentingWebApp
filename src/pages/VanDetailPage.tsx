@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { VanObject } from "../types";
+import { getTypeColor } from "../utils";
 
 export const VanDetialPage = () => {
   const params = useParams();
@@ -11,15 +12,6 @@ export const VanDetialPage = () => {
       .then(res => res.json())
       .then(data => setVanDetail(data.vans))
   }, [params.id]);
-
-  let color = '';
-  if (vanDetail) {
-    switch (vanDetail.type) {
-      case 'simple': color = 'success'; break;
-      case 'luxury': color = 'danger'; break;
-      case 'rugged': color = 'info'; break;
-    }
-  }
 
   return (
     <div>
@@ -39,7 +31,7 @@ export const VanDetialPage = () => {
               <div className="hstack mx-auto gap-2 mt-3">
                 <h1 className="fw-bold">{vanDetail.name}</h1>
                 <h6>
-                  <span className={`badge rounded-pill text-bg-${color}`}>{vanDetail.type}</span>
+                  <span className={`badge rounded-pill text-bg-${getTypeColor(vanDetail.type)}`}>{vanDetail.type}</span>
                 </h6>
               </div>
               <h5 className="fw-bold">${vanDetail.price}<span className="fw-normal">/day</span></h5>
