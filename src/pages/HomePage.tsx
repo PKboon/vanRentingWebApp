@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import HomePageImage from "../assets/images/home-page.jpg";
 
-const HomePage = () => {
+export const HomePage = () => {
   return (
     <div
       style={{
@@ -38,5 +38,3 @@ const HomePage = () => {
     </div>
   );
 }
-
-export default HomePage;

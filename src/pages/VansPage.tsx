@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { VanObject } from "../types";
 
-const VansPage = () => {
+export const VansPage = () => {
   // const [selectedFilter, setSelectedFilter] = useState({title: 'All', color:'warning'});
   // const vanFilterList = [
   //   {title: 'All', color:'warning'},
@@ -10,7 +11,7 @@ const VansPage = () => {
   //   {title: 'Rugged', color:'info'},
   // ];
 
-  const [vanList, setVanList] = useState([]);
+  const [vanList, setVanList] = useState<VanObject[]>([]);
   useEffect(() => {
     fetch("/api/vans")
       .then(res => res.json())
@@ -21,23 +22,23 @@ const VansPage = () => {
     return (
       vanList.map(item => {
         let color = '';
-        switch (item['type']) {
+        switch (item.type) {
           case 'simple': color = 'success'; break;
           case 'luxury': color = 'danger'; break;
           case 'rugged': color = 'info'; break;
         }
 
         return (
-          <Link to={`/vans/${item['id']}`} className="text-decoration-none text-dark">
-            <div className='col position-relative' key={item['id']}>
+          <Link key={item.id} to={`/vans/${item.id}`} className="text-decoration-none text-dark">
+            <div className='col position-relative' key={item.id}>
               <h6 className="position-absolute end-0 mt-3 me-4">
-                <span className={`badge rounded-pill text-bg-${color}`}>{item['type']}</span>
+                <span className={`badge rounded-pill text-bg-${color}`}>{item.type}</span>
               </h6>
-              <img src={item['imageUrl']} className="w-100 rounded-5" />
+              <img src={item.imageUrl} className="w-100 rounded-5" />
               <div>
                 <div className="d-flex justify-content-between px-3 mt-2">
-                  <h5 className="fw-bold">{item['name']}</h5>
-                  <h6 className="fw-bold">${item['price']}<span style={{ fontSize: '14px' }}>/day</span></h6>
+                  <h5 className="fw-bold">{item.name}</h5>
+                  <h6 className="fw-bold">${item.price}<span className="fw-normal" style={{ fontSize: '14px' }}>/day</span></h6>
                 </div>
               </div>
             </div>
@@ -85,5 +86,3 @@ const VansPage = () => {
     </div>
   );
 }
-
-export default VansPage;
